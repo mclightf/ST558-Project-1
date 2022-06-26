@@ -302,7 +302,7 @@ These distributions of the Power within the different Risk categories makes a fa
 
 Let's quantify this a little bit and see if we can find Squirtle's *best* move while taking into account both Power and Accuracy. If Squirtle were to use a move with an Accuracy of 90%, then 10% of the time the move will miss and therefore have an Effective Power of zero in that case. So, the **True Power** of a move would be the overall average of it's possible Effective Power values. Let's define a variable to represent this. 
 
-$$\text{True Power} = \text{Effective Power} \times \frac{\text{Accuracy}}{100} $$
+True Power = Effective Power $\times$ $\frac{\text{Accuracy}}{100}$
 
 ```{r, eval = T}
 squirtleData$truePower <- squirtleData$effPower*squirtleData$Accuracy/100
