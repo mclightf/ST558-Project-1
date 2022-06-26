@@ -26,9 +26,9 @@ Below are the required packages to run this code:
 
 ## Contacting the API
 
-We will define a few functions to help us contact the Pokémon API. In
-terms of endpoints, this API has many groups of them. Below are the
-groups with their respective endpoints:
+We will define a functions to help us contact the Pokémon API. In terms
+of endpoints, this API has many groups of them. Below are the groups
+with their respective endpoints:
 
 -   **Berries** - Berries, Berry Firmnesses, and Berry Flavors.
 -   **Contests** - Contest Types, Contest Effects, and Super Contest
