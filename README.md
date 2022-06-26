@@ -205,7 +205,7 @@ plot1 <- ggplot(squirtleData, aes(x=Type, fill=Type)) +
 plot1
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 It looks like most of Squirtle’s moves are either Normal or Water Type.
 That makes sense, considering Squirtle is a Water Type Pokémon!
@@ -260,7 +260,7 @@ plot2 <- ggplot(squirtleData, aes(x=Type, fill=Strength)) +
 plot2
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 It looks like a major reason Squirtle has so many Normal Type moves is
 because so many Status moves seem to be Normal Type.
@@ -304,7 +304,7 @@ plot3 <- ggplot(squirtleData, aes(x=Accuracy, y=Power, color=Type, label=Name)) 
 plot3
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 However, this is not the whole story. In Pokémon, there is a mechanic
 called **Same Type Attack Bonus**, or **STAB** for short. This increases
@@ -341,7 +341,7 @@ plot4 <- ggplot(squirtleData, aes(x=Accuracy, y=effPower, color=Type, label=Name
 plot4
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 Now we can see some definite outlying Water Type moves by taking into
 account Squirtle’s **STAB**.
@@ -374,7 +374,7 @@ plot5 <- ggplot(squirtleData, aes(x=Risk, y=Power, fill = Risk)) +
 plot5
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 These distributions of the Power within the different Risk categories
 makes a fair bit of sense. The risky moves are generally strong, while
@@ -439,7 +439,7 @@ plot6 <- ggplot(squirtleData, aes(x = truePower, fill = Strength)) +
 plot6
 ```
 
-![](../README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 This plot is very interesting. Since True Power takes into account the
 Accuracy of the moves, the Strong moves are not too different in
