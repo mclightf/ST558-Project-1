@@ -388,7 +388,7 @@ that case. So, the **True Power** of a move would be the overall average
 of it’s possible Effective Power values. Let’s define a variable to
 represent this.
 
-$$\\text{True Power} = \\text{Effective Power} \\times \\frac{\\text{Accuracy}}{100} $$
+True Power = Effective Power $\times$ $\frac{\text{Accuracy}}{100} $
 
 ``` r
 squirtleData$truePower <- squirtleData$effPower*squirtleData$Accuracy/100
