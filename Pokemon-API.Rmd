@@ -84,7 +84,7 @@ pokemonMoves <- function(pokemon, stats="all") {
   #Loop through each move and grab desired variables for each move
   for (i in 1:n) {
     move    <- fromJSON(moves$url[i])
-    #Initialize new row with dumm
+    #Initialize new row with dummy variables
     new     <- data.frame(Name = "chr", 
                           Type = "chr",
                           Power = 0,
@@ -131,8 +131,7 @@ pokemonMoves <- function(pokemon, stats="all") {
 
 ## Exploratory Data Analysis
 
-Now, let us use these functions to explore some of the data this API can give us. Let us call our first function, `
-pokemonMoves`, in order to explore the moves of the iconic Pokémon Squirtle. 
+Let us call our `pokemonMoves` function in order to explore the moves of the iconic Pokémon Squirtle. 
 
 ```{r, eval = T}
 squirtleData <- pokemonMoves("squirtle")
@@ -298,7 +297,7 @@ plot5 <- ggplot(squirtleData, aes(x=Risk, y=Power, fill = Risk)) +
 plot5
 ```
 
-These distributions of the Power within the different Risk categories makes a fair bit of sense. The risky moves are generally strong, while the weak and decent moves are generally less risky.
+These distributions of the Power within the different Risk categories make a fair bit of sense. The risky moves are generally strong, while the weak and decent moves are generally less risky.
 
 Let's quantify this a little bit and see if we can find Squirtle's *best* move while taking into account both Power and Accuracy. If Squirtle were to use a move with an Accuracy of 90%, then 10% of the time the move will miss and therefore have an Effective Power of zero in that case. So, the **True Power** of a move would be the overall average of it's possible Effective Power values. Let's define a variable to represent this. 
 
@@ -308,7 +307,7 @@ True Power = Effective Power $\times$ Accuracy / 100
 squirtleData$truePower <- squirtleData$effPower*squirtleData$Accuracy/100
 ```
 
-Let's look at some numerical summaries of the True Power of Squirtle's for each Type.
+Let's look at some numerical summaries of the True Power of Squirtle's moves for each Type.
 
 ```{r, eval = T}
 table2<- squirtleData %>%
@@ -316,7 +315,8 @@ table2<- squirtleData %>%
   summarise(Mean = round(mean(truePower)), 
             Median = round(median(truePower)),
             SD = round(sd(truePower)),
-            Count = n())
+            Count = n()) %>%
+  arrange(desc(Mean))
 kable(table2,"simple")
 ```
 

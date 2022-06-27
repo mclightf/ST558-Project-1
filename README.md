@@ -98,7 +98,7 @@ pokemonMoves <- function(pokemon, stats="all") {
   #Loop through each move and grab desired variables for each move
   for (i in 1:n) {
     move    <- fromJSON(moves$url[i])
-    #Initialize new row with dumm
+    #Initialize new row with dummy variables
     new     <- data.frame(Name = "chr", 
                           Type = "chr",
                           Power = 0,
@@ -143,9 +143,8 @@ pokemonMoves <- function(pokemon, stats="all") {
 
 ## Exploratory Data Analysis
 
-Now, let us use these functions to explore some of the data this API can
-give us. Let us call our first function, `pokemonMoves`, in order to
-explore the moves of the iconic Pokémon Squirtle.
+Let us call our `pokemonMoves` function in order to explore the moves of
+the iconic Pokémon Squirtle.
 
 ``` r
 squirtleData <- pokemonMoves("squirtle")
@@ -377,7 +376,7 @@ plot5
 ![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 These distributions of the Power within the different Risk categories
-makes a fair bit of sense. The risky moves are generally strong, while
+make a fair bit of sense. The risky moves are generally strong, while
 the weak and decent moves are generally less risky.
 
 Let’s quantify this a little bit and see if we can find Squirtle’s
@@ -395,7 +394,7 @@ squirtleData$truePower <- squirtleData$effPower*squirtleData$Accuracy/100
 ```
 
 Let’s look at some numerical summaries of the True Power of Squirtle’s
-for each Type.
+moves for each Type.
 
 ``` r
 table2<- squirtleData %>%
@@ -403,22 +402,23 @@ table2<- squirtleData %>%
   summarise(Mean = round(mean(truePower)), 
             Median = round(median(truePower)),
             SD = round(sd(truePower)),
-            Count = n())
+            Count = n()) %>%
+  arrange(desc(Mean))
 kable(table2,"simple")
 ```
 
 | Type     | Mean | Median |  SD | Count |
 |:---------|-----:|-------:|----:|------:|
-| dark     |   60 |     60 |  NA |     1 |
+| water    |  106 |    115 |  41 |    17 |
 | dragon   |  102 |    102 |  25 |     2 |
-| fighting |   71 |     64 |  38 |     7 |
-| ground   |   50 |     50 |  42 |     2 |
+| steel    |   75 |     75 |  NA |     1 |
 | ice      |   74 |     76 |  16 |     4 |
+| fighting |   71 |     64 |  38 |     7 |
 | normal   |   67 |     68 |  27 |    19 |
 | psychic  |   61 |     61 |  16 |     2 |
+| dark     |   60 |     60 |  NA |     1 |
+| ground   |   50 |     50 |  42 |     2 |
 | rock     |   50 |     57 |  21 |     3 |
-| steel    |   75 |     75 |  NA |     1 |
-| water    |  106 |    115 |  41 |    17 |
 
 Since True Power takes into account not only accuracy but also **STAB**,
 it is not surprising that the Water Type has the highest mean True
