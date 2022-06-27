@@ -388,7 +388,7 @@ Let’s quantify this a little bit and see if we can find Squirtle’s
 Squirtle were to use a move with an Accuracy of 90%, then 10% of the
 time the move will miss and therefore have an Effective Power of zero in
 that case. So, the **True Power** of a move would be the overall average
-of it’s possible Effective Power values. Let’s define a variable to
+of its possible Effective Power values. Let’s define a variable to
 represent this.
 
 True Power = Effective Power × Accuracy / 100
