@@ -305,6 +305,10 @@ plot3
 
 ![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
+We see Squirtle’s moves have a large range in both Power (20 to 150) and
+Accuracy (50 to 100), although most moves seem to have Accuracies of 100
+and have Powers between 50 and 100.
+
 However, this is not the whole story. In Pokémon, there is a mechanic
 called **Same Type Attack Bonus**, or **STAB** for short. This increases
 the effective power of moves that match a Pokémon’s type by 50%. So,
